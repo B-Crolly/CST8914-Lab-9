@@ -1,0 +1,32 @@
+ol ol {
+	list-style-type: lower-alpha;
+}
+
+.formDiv {
+	margin: 0.75em 0;
+}
+
+.formDiv label:first-child {
+	display: block;
+	font-weight: bold;
+}
+.formDiv input, .formDiv textarea {
+	width: 20em;
+}
+.formDiv input[type="checkbox"] {
+	width: 1em;
+}
+
+.formDiv textarea {
+	height: 8em;
+}
+
+div[role="main"], main {
+	border-top: solid thin black;
+}
+
+footer {
+	font-size: 85%;
+	padding: 1em;
+	border-top: solid thin black;
+}
