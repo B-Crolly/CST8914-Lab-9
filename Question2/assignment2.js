@@ -5,37 +5,68 @@ var submitBtn = null;
 submitBtn = document.getElementById("submitBtn");
 var statusMessage = document.getElementById("statusMessage");
 
+// Get the form element
+var form = document.querySelector('form');
+
 // Some error handling
-if (submitBtn) {
-    // Listen for the "click" event on the button; when someone clicks it, run function sendComments(e)
-    submitBtn.addEventListener("click", sendComments, false);
+if (submitBtn && form) {
+	// Listen for the "submit" event on the form
+	form.addEventListener("submit", sendComments, false);
 } else {
-    console.error("Did not get the submit button for some reason.");
+	console.error("Did not get the submit button or form for some reason.");
 }
 
 function sendComments(e) {
-    e.preventDefault(); // Prevent the form from submitting when the button is clicked
+	e.preventDefault(); // Prevent the default form submission
 
-    // This is the message we want added to the aria live region
-    let msg =
-        "Thank you for sending your comments. Your comments have already been thrown into the dustbin of the Interwebs, and will be ignored at once!";
+	// Collect form data
+	var formData = new FormData(form);
 
-    // Now, add the code to insert the msg into the aria live region
-    if (statusMessage) {
-        // Make the statusMessage div visible
-        statusMessage.style.visibility = "visible";
-        // Insert the message into the div
-        statusMessage.textContent = msg;
-    } else {
-        console.error("Status message element not found.");
-    }
+	// This is the message we want added to the aria live region
+	let msgTitle = "ARIA Assignment 2 - Comments Not Sent";
+	let msgBody =
+		"Thank you for sending your comments. Your comments have already been thrown into the dustbin of the Interwebs, and will be ignored at once!";
 
-    // Display the pop-up message
-    alert(
-        "ARIA Assignment 2 - Comments Not Sent\n\n" +
-            "Thank you for sending your comments. Your comments have already been thrown into the dustbin of the Interwebs, and will be ignored at once!"
-    );
+	// Send the form data using Fetch API
+	fetch(form.action, {
+		method: form.method,
+		body: formData
+	})
+		.then(function (response) {
+			if (response.ok) {
+				// Handle success
+				// Update the status message
+				if (statusMessage) {
+					statusMessage.style.visibility = "visible";
+					statusMessage.innerHTML = "<h3>" + msgTitle + "</h3><p>" + msgBody + "</p>";
+				}
 
-    // Keep the focus on the submit button
-    submitBtn.focus();
+				// Display the pop-up message
+				alert(msgTitle + "\n\n" + msgBody);
+
+				// Keep the focus on the submit button
+				submitBtn.focus();
+			} else {
+				// Handle server errors
+				return response.text().then(function (text) {
+					throw new Error(text);
+				});
+			}
+		})
+		.catch(function (error) {
+			// Handle network errors or server errors
+			console.error("Error:", error);
+
+			// Update the status message with error information
+			if (statusMessage) {
+				statusMessage.style.visibility = "visible";
+				statusMessage.innerHTML = "<h3>Error</h3><p>There was an error submitting your comments. Please try again later.</p>";
+			}
+
+			// Display an error pop-up
+			alert("Error\n\nThere was an error submitting your comments. Please try again later.");
+
+			// Keep the focus on the submit button
+			submitBtn.focus();
+		});
 } // End of sendComments

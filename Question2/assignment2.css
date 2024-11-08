@@ -1,43 +1,43 @@
 ol ol {
-    list-style-type: lower-alpha;
+	list-style-type: lower-alpha;
 }
 
 .formDiv {
-    margin: 0.75em 0;
+	margin: 0.75em 0;
 }
 
 .formDiv label:first-child {
-    display: block;
-    font-weight: bold;
+	display: block;
+	font-weight: bold;
 }
 
 .formDiv input,
 .formDiv textarea {
-    width: 20em;
+	width: 20em;
 }
 
 .formDiv input[type="checkbox"] {
-    width: auto; /* Changed from 1em to auto for proper sizing */
+	width: auto; /* Changed from 1em to auto for proper sizing */
 }
 
 .formDiv textarea {
-    height: 8em;
+	height: 8em;
 }
 
 div[role="main"],
 main {
-    border-top: solid thin black;
+	border-top: solid thin black;
 }
 
 footer {
-    font-size: 85%;
-    padding: 1em;
-    border-top: solid thin black;
+	font-size: 85%;
+	padding: 1em;
+	border-top: solid thin black;
 }
 
 /* Added styling for the status message */
 #statusMessage {
-    margin-top: 1em;
-    font-weight: bold;
-    color: green;
+	margin-top: 1em;
+	font-weight: bold;
+	color: green;
 }
