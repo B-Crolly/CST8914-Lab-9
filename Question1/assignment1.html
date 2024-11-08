@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>ARIA Assignment 1</title>
-		<link rel="Stylesheet" href="assignment1.css" type="text/css">
-	</head>
-	<body>
-		<div role="banner">
-			<div role="heading" aria-level="1">ARIA Assignment 1</div>
-			<p>Your assignment is to replace the ARIA, where possible, on this page to HTML.</p>
-			<p><strong>Note</strong>:  All text was taken from <a href="http://fillerama.io/" target="_blank" rel="noopener noreferrer">Fillerama</a>.  Assume the semantics are correct;  ie: if it's marked up as a heading, it's a heading.  If it's marked up as a list, it's a list.  Don't fix the semantics.  Just change from ARIA to HTML.</p>
-		</div>
-		<div role="main">
-			<div role="document">
-				<div role="heading" aria-level="2">I'm a monster.</div>
-				<p>What's Spanish for "I know you speak English?" There's only one man I've ever called a coward, and that's Brian Doyle Murray. No, what I'm calling you is a television actor. I've opened a door here that I regret.</p>
-				<p>Marry me. <strong> No, I did not kill Kitty.</strong> <em> However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.</em> What's Spanish for "I know you speak English?</p>
-				<div role="heading" aria-level="3">We just call it a sausage.</div>
-				<p>No… but I'd like to be asked! Bad news. Andy Griffith turned us down. He didn't like his trailer. I'm a monster. Bad news. Andy Griffith turned us down. He didn't like his trailer.</p>
-				<div role="list">
-					<div role="listitem">No, I did not kill Kitty. However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.</div>
-					<div role="listitem">No… but I'd like to be asked!</div>
-					<div role="listitem">That's what it said on 'Ask Jeeves.'</div>
-				</div>
-	
-				<div role="heading" aria-level="3">What's Spanish for "I know you speak English?"</div>
-				<p>That's what it said on 'Ask Jeeves.' Well, what do you expect, mother? Michael! We just call it a sausage. No! I was ashamed to be SEEN with you. I like being with you.</p>
-				<div role="list" class="counter">
-					<div role="listitem" aria-setsize="3" aria-posinset="1">There's so many poorly chosen words in that sentence.</div>
-					<div role="listitem" aria-setsize="3" aria-posinset="2">Now, when you do this without getting punched in the chest, you'll have more fun.</div>
-					<div role="listitem" aria-setsize="3" aria-posinset="3">Say goodbye to these, because it's the last time!</div>
-				</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>ARIA Assignment 1</title>
+	<link rel="stylesheet" href="assignment1.css" type="text/css">
+</head>
+<body>
+	<!-- Replaced <div role="banner"> with <header> -->
+	<header>
+		<!-- Replaced <div role="heading" aria-level="1"> with <h1> -->
+		<h1>ARIA Assignment 1</h1>
+		<p>Your assignment is to replace the ARIA, where possible, on this page to HTML.</p>
+		<p><strong>Note</strong>: All text was taken from <a href="http://fillerama.io/" target="_blank" rel="noopener noreferrer">Fillerama</a>. Assume the semantics are correct; i.e., if it's marked up as a heading, it's a heading. If it's marked up as a list, it's a list. Don't fix the semantics. Just change from ARIA to HTML.</p>
+	</header>
 
-				<p>There's so many poorly chosen words in that sentence. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. I've opened a door here that I regret. Across from where?</p>
-			</div>
-		</div>
-		<div role="contentinfo">
-			<p>Go back to <span role="link" onclick="location.href='../';">ARIA Intro Assignments</span>.</p>
-			<p>Copyright: <a href="https://www.nordburg.ca/">Andrew Nordlund</a> 2023. <a href="https://github.com/andrewnordlund/aria-intro-tutorial">Github aria-intro-tutorial</a></p>
-		</div>
-	</body>
+	<!-- Replaced <div role="main"> with <main> -->
+	<main>
+		<!-- Replaced <div role="document"> with <section> -->
+		<section>
+			<!-- Replaced <div role="heading" aria-level="2"> with <h2> -->
+			<h2>I'm a monster.</h2>
+			<p>What's Spanish for "I know you speak English?" There's only one man I've ever called a coward, and that's Brian Doyle Murray. No, what I'm calling you is a television actor. I've opened a door here that I regret.</p>
+			<p>Marry me. <strong>No, I did not kill Kitty.</strong> <em>However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.</em> What's Spanish for "I know you speak English?"</p>
+
+			<!-- Replaced <div role="heading" aria-level="3"> with <h3> -->
+			<h3>We just call it a sausage.</h3>
+			<p>No… but I'd like to be asked! Bad news. Andy Griffith turned us down. He didn't like his trailer. I'm a monster. Bad news. Andy Griffith turned us down. He didn't like his trailer.</p>
+
+			<!-- Replaced <div role="list"> with <ul> -->
+			<ul>
+				<!-- Replaced <div role="listitem"> with <li> -->
+				<li>No, I did not kill Kitty. However, I am going to oblige and answer the nice officer's questions because I am an honest man with no secrets to hide.</li>
+				<li>No… but I'd like to be asked!</li>
+				<li>That's what it said on 'Ask Jeeves.'</li>
+			</ul>
+
+			<!-- Replaced <div role="heading" aria-level="3"> with <h3> -->
+			<h3>What's Spanish for "I know you speak English?"</h3>
+			<p>That's what it said on 'Ask Jeeves.' Well, what do you expect, mother? Michael! We just call it a sausage. No! I was ashamed to be SEEN with you. I like being with you.</p>
+
+			<!-- Replaced <div role="list" class="counter"> with <ol class="counter"> -->
+			<ol class="counter">
+				<!-- Replaced <div role="listitem"> with <li> -->
+				<li>There's so many poorly chosen words in that sentence.</li>
+				<li>Now, when you do this without getting punched in the chest, you'll have more fun.</li>
+				<li>Say goodbye to these, because it's the last time!</li>
+			</ol>
+
+			<p>There's so many poorly chosen words in that sentence. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. I've opened a door here that I regret. Across from where?</p>
+		</section>
+	</main>
+
+	<!-- Replaced <div role="contentinfo"> with <footer> -->
+	<footer>
+		<p>Go back to 
+			<!-- Replaced <span role="link"> with <a> and used 'href' instead of 'onclick' -->
+			<a href="../">ARIA Intro Assignments</a>.
+		</p>
+		<p>Copyright:
+			<a href="https://www.nordburg.ca/">Andrew Nordlund</a> 2023.
+			<a href="https://github.com/andrewnordlund/aria-intro-tutorial">Github aria-intro-tutorial</a>
+		</p>
+	</footer>
+</body>
 </html>
